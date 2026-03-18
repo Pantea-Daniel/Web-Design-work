@@ -1,0 +1,58 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    margin: 10px 0 5px 0;
+}
+
+h2 {
+    margin: 0 0 15px 0;
+    font-weight: normal;
+}
+
+/* ID selector */
+#card-container {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 300px;
+}
+
+/* Class selectors */
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #2575fc;
+}
+
+.full-name {
+    color: #333;
+    font-size: 1.5em;
+}
+
+.subtitle {
+    color: #555;
+    font-size: 1em;
+}
+
+.contact-link {
+    color: #2575fc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-link:hover {
+    color: #6a11cb;
+}
