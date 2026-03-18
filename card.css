@@ -18,7 +18,7 @@ h2 {
 }
 
 /* ID selector */
-#card-container {
+#card{
     background: white;
     padding: 30px 40px;
     border-radius: 15px;
@@ -27,7 +27,6 @@ h2 {
     width: 300px;
 }
 
-/* Class selectors */
 .profile-image {
     width: 120px;
     height: 120px;
