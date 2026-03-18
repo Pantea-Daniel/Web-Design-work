@@ -1,0 +1,89 @@
+
+
+=====================================
+CSS SPECIFICITY ANALYSIS REPORT
+=====================================
+
+## A. STYLING BREAKDOWN BY PARAGRAPH
+
+### Paragraph A: Standard Paragraph Element
+HTML: `<p>`
+Applied Selectors: p
+
+All styling properties are inherited from the basic element selector:
+* color: gray
+* font-size: 1rem
+* font-family: Georgia, serif
+* line-height: 1.4
+* padding: 4px 0
+
+---
+
+### Paragraph B: Paragraph with Info Class
+HTML: `<p class="info">`
+Applied Selectors: p and .info
+
+The class selector overrides the element selector for most properties:
+* color: steelblue (from class)
+* font-size: 1.25rem (from class)
+* font-family: Arial, sans-serif (from class)
+* line-height: 1.4 (from element)
+* padding: 8px 14px (from class)
+* background-color: #e8f4fd (from class)
+* border-left: 5px solid steelblue (from class)
+
+---
+
+### Paragraph C: Paragraph with Warning ID
+HTML: `<p id="warning">`
+Applied Selectors: p and #warning
+
+The ID selector has the highest specificity, overriding both element and class selectors:
+* color: darkred (from ID)
+* font-size: 0.8rem (from ID)
+* font-family: 'Courier New', monospace (from ID)
+* line-height: 1.4 (from element)
+* padding: 10px (from ID)
+* font-style: italic (from ID)
+* text-transform: uppercase (from ID)
+* letter-spacing: 0.15em (from ID)
+* border: 2px dashed darkred (from ID)
+* background-color: #fff0f0 (from ID)
+
+---
+
+### Paragraph D: Paragraph with Both Class and ID
+HTML: `<p class="info" id="warning">`
+Applied Selectors: p, .info, #warning, and their combined variation
+
+When multiple selectors apply, the one with the highest specificity wins:
+* color: darkorange (ID + class combination wins)
+* font-size: 1.1rem (ID + class combination wins)
+* font-family: 'Courier New', monospace (ID selector wins)
+* line-height: 1.4 (element selector applies)
+* padding: 10px (ID selector wins)
+* background-color: #fff7e0 (ID + class combination wins)
+* border: 2px solid darkorange (ID + class combination wins)
+* font-style: normal (ID + class combination overrides ID alone)
+* letter-spacing: 0.03em (ID + class combination wins)
+* text-transform: uppercase (ID selector wins)
+
+=====================================
+
+## B. KEY SPECIFICITY PATTERNS IN PARAGRAPH D
+
+The most important style decisions in Paragraph D demonstrate specificity conflicts:
+
+**Color Property**: The #warning.info combination (ID + class) takes precedence, displaying darkorange
+
+**Font-family Property**: The #warning ID selector controls this, using 'Courier New', monospace
+
+=====================================
+
+## C. H1 ELEMENT STYLING SOURCES
+
+The H1 element receives styles from mixed sources:
+
+* color → applied via internal CSS
+* font-style → applied via external CSS
+* padding → applied via external CSS
