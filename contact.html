@@ -23,14 +23,14 @@
   <main id="main-content">
     <section>
       <h2>Message form</h2>
-      <form method="post" action="#" aria-label="Contact form">
+      <form method="post" action="#" aria-label="Contact form" id="contactForm">
 
         <fieldset>
           <legend>Your details</legend>
 
           <p>
             <label for="name">Full name (required)</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="fullname" name="name" required>
           </p>
           <p>
             <label for="email">Email (required)</label>
@@ -40,19 +40,44 @@
             <label for="phone">Phone (optional)</label>
             <input type="tel" id="phone" name="phone">
           </p>
+          <p>
+            <label for="dob">Date of Birth (required)</label>
+            <input type="date" id="dob" name="dob" required>
+          </p>
+          <p>
+            <label for="age">Age (required)</label>
+            <input type="number" id="age" name="age" min="18" max="60" required>
+          </p>
+          <p>
+            <label for="website">Website (required)</label>
+            <input type="url" id="website" name="website" required>
+          </p>
+          <p>
+            <label for="favColor">Favorite Color (required)</label>
+            <input type="color" id="favColor" name="favColor" required>
+          </p>
         </fieldset>
 
         <fieldset>
           <legend>Your message</legend>
           <p>
             <label for="subject">Subject (required)</label>
-            <input type="text" id="subject" name="subject" required aria-describedby="subject-hint">
-            <small id="subject-hint" class="form-hint">e.g. Lab 2, schedule, grading</small>
+            <select id="subject" name="subject" required aria-describedby="subject-hint">
+              <option value="">Select subject</option>
+              <option value="Lab 2">Lab 2</option>
+              <option value="schedule">Schedule</option>
+              <option value="grading">Grading</option>
+            </select>
+            <small id="subject-hint" class="form-hint">Choose from the available options</small>
           </p>
 
           <p>
             <label for="msg">Message (required)</label>
-            <textarea id="msg" name="message" rows="5" required></textarea>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </p>
+          <p>
+            <label for="fileUpload">Upload File (required)</label>
+            <input type="file" id="fileUpload" name="fileUpload" accept=".pdf,.docx" required>
           </p>
         </fieldset>
 
@@ -125,6 +150,7 @@
   <footer>
     <p>Pantea Daniel · Web Design · 2026 · Semester II</p>
   </footer>
+  <script src="contact.js"></script>
 </body>
 
 </html>
